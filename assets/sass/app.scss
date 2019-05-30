@@ -1,0 +1,124 @@
+@import 'init';
+
+/*------------------------------------------------------------------------------------*/
+/* This is main CSS file that contains custom style rules used in this template */
+/*------------------------------------------------------------------------------------*/
+/* Author: Liliom TM
+/* Author URI: http://liliom.co
+/* Copyright: (C) 2018
+/*------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------*\
+	- INITIALIZATION
+\*----------------------------------------------*/
+*::-moz-selection {
+  background-color: $primary;
+  color: #fff;
+}
+
+*::-webkit-selection {
+  background-color: $primary;
+  color: #fff;
+}
+
+*::selection {
+  background-color: $primary;
+  color: #fff;
+}
+
+*::-webkit-input-placeholder {
+  font-family: $font-family-base;
+  color: #B9BED1;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+*:-ms-input-placeholder {
+  font-family: $font-family-base;
+  color: #B9BED1;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+*:-moz-placeholder {
+  font-family: $font-family-base;
+  color: #B9BED1;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+*::-moz-placeholder {
+  font-family: $font-family-base;
+  color: #B9BED1;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+a {
+  color: $headings-color;
+
+  &:hover, &:active, &:focus {
+    color: theme-color('primary');
+    text-decoration: none;
+  }
+}
+
+a, button, .btn {
+  @include transition(all .3s ease);
+}
+
+ins {
+  text-decoration: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+body {
+  font-family: $font-family-base;
+  font-weight: 300;
+  text-transform: none;
+  color: $paragraphs-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-font-family;
+}
+
+// Start Here
+
+.components-card {
+  box-shadow: 0 26px 28px 0 rgba(75, 91, 120, 0.07);
+  border-radius: 0 0 2px 2px;
+
+  &__thumbnail {
+    position: relative;
+  }
+
+  &__support {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+  }
+
+  &__action {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+  }
+
+  &__body {
+    padding: 24px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}

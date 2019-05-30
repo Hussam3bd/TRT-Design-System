@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@import 'mixins', 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+//@import "~bootstrap/scss/functions";
+//@import "~bootstrap/scss/variables";
+//@import "~bootstrap/scss/mixins";
+//@import "~bootstrap/scss/root";
+//@import "~bootstrap/scss/reboot";
+//@import "~bootstrap/scss/type";
+//@import "~bootstrap/scss/images";
+//@import "~bootstrap/scss/grid";
+//@import 'libs/bootstrap-rtl';
+//@import '~owl.carousel/src/scss/owl.carousel';
+//@import '~sweetalert2/src/sweetalert2';
+@import '_fonts',
+'Components/btn',
+'Components/navbar',
+'helpers';

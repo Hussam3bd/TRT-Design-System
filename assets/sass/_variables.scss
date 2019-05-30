@@ -1,0 +1,27 @@
+/**
+ * Colors
+ */
+$primary: #0089CC;
+$secondary: #22292F;
+$success: #2bac91;
+$info: #2BCDC1;
+$warning: #FDD97F;
+$danger: #da3e54;
+$facebook: #3B5998;
+$twitter: #0084b4;
+
+// Fonts
+$font-family-base: 'FreightSans Pro', sans-serif;
+$headings-font-family: 'FreightSans Pro', sans-serif;
+
+$headings-color: $secondary;
+$paragraphs-color: #808080;
+
+$swal2-success: $success;
+$swal2-success-border: rgba($success, .3);
+$swal2-error: $danger;
+$swal2-warning: $warning;
+$swal2-info: $info;
+$swal2-question: $secondary;
+$swal2-confirm-button-background-color: $primary;
+
