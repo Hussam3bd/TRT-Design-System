@@ -1,21 +1,19 @@
 /**
  * Colors
  */
-$primary: #0089CC;
+$primary: #00BAFF;
 $secondary: #22292F;
-$success: #2bac91;
-$info: #2BCDC1;
-$warning: #FDD97F;
-$danger: #da3e54;
-$facebook: #3B5998;
-$twitter: #0084b4;
+$success: #41D841;
+$info: #99FEFF;
+$warning: #FFEB3B;
+$danger: #F81818;
 
 // Fonts
 $font-family-base: 'FreightSans Pro', sans-serif;
 $headings-font-family: 'FreightSans Pro', sans-serif;
 
 $headings-color: $secondary;
-$paragraphs-color: #808080;
+$paragraphs-color: #777C80;
 
 $swal2-success: $success;
 $swal2-success-border: rgba($success, .3);

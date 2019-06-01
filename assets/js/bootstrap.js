@@ -11,8 +11,13 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-    require('vue');
+    window.Vue = require('vue');
     // require('owl.carousel');
     // window.swal = require('sweetalert2');
 } catch (e) {
 }
+
+Vue.component(
+    'card-component',
+    require('./components/CardComponent')
+);

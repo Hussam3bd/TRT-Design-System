@@ -11,48 +11,78 @@
 <body>
 
 <section id="app" class="p-5">
+
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-4">
 
-				<div class="components-card">
-					<div class="components-card__thumbnail">
-						<a href="#!" class="components-card__support">Primary Support</a>
-
-						<img src="https://cdni0.trtworld.com/w480/h270/q75/56377_AUSSebastianKurz_1558969435854.JPG"
-						     class="img-fluid" alt="...">
-
-						<div class="components-card__action">
-							<a href="#" class="card_avatar">
-								<i class="fas fa-play"></i>
-							</a>
-							<strong>Episodes</strong>
-							<span>Duration</span>
-						</div>
-					</div>
-
-					<div class="components-card__body">
-						<h3 class="components-card__title">Card Title</h3>
-						<h5 class="components-card__subtitle">Card Subtitle</h5>
-						<p class="components-card__text">
-							Some quick example text to build on the card title and make up the bulk of the card's content.
-						</p>
-						<ul class="meta">
-							<li>
-								<a href="#">Category</a>
-							</li>
-							<li>
-								<time>Timestamp</time>
-							</li>
-						</ul>
-					</div>
-				</div>
+				<card-component :card="card"></card-component>
 
 			</div>
 
 		</div>
 	</div>
+
+	<!-- form -->
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-6">
+				<form class="">
+					<h1 class="pb-2 mt-0 mb-3 border-bottom">Card Content</h1>
+					<div class="form-group">
+						<label>Card Type</label>
+						<select class="form-control" name="card.type" v-model="card.type">
+							<option class="news">News</option>
+							<option class="show">Show</option>
+						</select>
+					</div>
+
+					<div class="form-group" v-show="card.type == 'Show'">
+						<label>Episodes</label>
+						<input class="form-control" type="text" v-model="card.episodes" :change="supertrim(card.episodes)"
+						       name="headline">
+					</div>
+					<div class="form-group" v-show="card.type == 'Show'">
+						<label>Duration</label>
+						<input class="form-control" type="text" v-model="card.duration" :change="supertrim(card.duration)"
+						       name="headline">
+					</div>
+
+					<div class="form-group">
+						<label>Headline</label>
+						<input class="form-control" type="text" v-model="card.headline" :change="supertrim(card.headline)"
+						       name="headline">
+					</div>
+
+					<div class="form-group">
+						<label>Subtitle</label>
+						<input class="form-control" type="text" v-model="card.subtitle" name="subtitle">
+					</div>
+
+					<div class="form-group">
+						<label>Card Text</label>
+						<textarea class="form-control" v-model="card.bodyText" name="bodyText"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label>Thumbnail</label>
+						<input class="form-control" type="text" v-model="card.thumbnail" :change="supertrim(card.thumbnail)">
+					</div>
+
+					<div class="form-group">
+						<label>CTA Text</label>
+						<input class="form-control" type="text" v-model="card.CTAText">
+					</div>
+					<div class="form-group">
+						<label>CTA URL</label>
+						<input class="form-control" type="text" v-model="card.CTAURL">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 </section>
 
 <script type="text/javascript" src="dist/js/app.js"></script>
