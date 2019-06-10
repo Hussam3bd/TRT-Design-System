@@ -12,13 +12,14 @@ var app = new Vue({
     el: '#app',
     data: {
         card: {
-            type: 'News',
+            type: 'news',
+            style: 'boxed',
             headline: 'Headline',
             subtitle: 'Subtitle',
             bodyText: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
             thumbnail: 'https://cdni0.trtworld.com/w480/h270/q75/56377_AUSSebastianKurz_1558969435854.JPG',
-            episodes: 'Episodes',
-            duration: 'Duration',
+            episodes: '23 Bölüm',
+            duration: '45 dk',
             CTAText: '',
             CTAURL: '',
         }

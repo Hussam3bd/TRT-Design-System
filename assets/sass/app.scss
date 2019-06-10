@@ -89,8 +89,34 @@ h1, h2, h3, h4, h5, h6 {
 // Start Here
 
 .components-card {
-  box-shadow: 0 26px 28px 0 rgba(75, 91, 120, 0.07);
-  border-radius: 0 0 2px 2px;
+
+  &__body {
+    padding: 24px 0;
+
+    > .btn {
+      margin-top: 20px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  &.card-boxed {
+    box-shadow: 0 26px 28px 0 rgba(75, 91, 120, 0.07);
+    border-radius: 0 0 2px 2px;
+    background-color: #fff;
+
+    .components-card__body {
+      padding: 24px;
+    }
+  }
 
   &__header {
     position: relative;
@@ -153,20 +179,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 16px;
     color: #777C80;
     line-height: 24px;
-    margin-bottom: 20px;
-  }
-
-  &__body {
-    padding: 24px;
-
-    ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-
-      li {
-        display: inline-block;
-      }
-    }
+    margin-top: 8px;
   }
 }
