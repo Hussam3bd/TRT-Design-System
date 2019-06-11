@@ -89,9 +89,13 @@ h1, h2, h3, h4, h5, h6 {
 // Start Here
 
 .components-card {
+  margin-bottom: 3rem;
+  border: 1px solid #d2d2d2;
+  background-color: #fff;
+  border-radius: 2px;
 
   &__body {
-    padding: 24px 0;
+    padding: 16px 24px;
 
     > .btn {
       margin-top: 20px;
@@ -108,18 +112,24 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  &.card-boxed {
-    box-shadow: 0 26px 28px 0 rgba(75, 91, 120, 0.07);
-    border-radius: 0 0 2px 2px;
-    background-color: #fff;
+  .action {
+    flex: 1;
+    text-align: right;
+  }
 
-    .components-card__body {
-      padding: 24px;
-    }
+  &__header, &__footer {
+    position: relative;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
   }
 
   &__header {
-    position: relative;
+    border-bottom: 1px solid #d2d2d2;
+  }
+
+  &__footer {
+    border-top: 1px solid #d2d2d2;
   }
 
   &__thumbnail {
@@ -149,6 +159,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 
     > a {
       display: inline-block;
@@ -180,5 +191,28 @@ h1, h2, h3, h4, h5, h6 {
     color: #777C80;
     line-height: 24px;
     margin-top: 8px;
+  }
+
+  &.card-boxless {
+    border: none;
+
+    .components-card__body,
+    .components-card__header,
+    .components-card__footer {
+      padding-right: 0;
+      padding-left: 0;
+      border: none;
+    }
+  }
+
+  &.card-overlays {
+
+    .components-card__body {
+      position: absolute;
+      bottom: 0;
+      height: 100%;
+      background-color: rgba(255, 255, 255, .6);
+      padding: 16px 24px 0;
+    }
   }
 }

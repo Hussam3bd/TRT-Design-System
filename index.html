@@ -15,75 +15,163 @@
 	<div class="container">
 		<div class="row">
 
-			<div class="col-md-4">
+			<div class="col-md-5 col-sm-12">
+				<form class="">
+					<h1 class="pb-2 mt-0 mb-3 border-bottom">Card Component</h1>
 
+					<div class="form-group row mb-4">
+						<div class="col-sm-4 font-weight-bold text-dark">Card Option</div>
+						<div class="col-sm-8">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="check1" value="header"
+								       v-model="card.options.header">
+								<label class="form-check-label" for="check1">Header</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="check2" value="footer"
+								       v-model="card.options.footer">
+								<label class="form-check-label" for="check2">Footer</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="check3" value="thumbnail"
+								       v-model="card.options.thumbnail">
+								<label class="form-check-label" for="check3">Thumbnail</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="check4" value="body"
+								       v-model="card.options.body">
+								<label class="form-check-label" for="check4">Body</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group row mb-4">
+						<div class="col-sm-4 font-weight-bold text-dark">Card Style</div>
+						<div class="col-sm-8">
+							<select class="form-control" v-model="card.style">
+								<option value="boxed">Boxed</option>
+								<option value="boxless">Boxless</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row mb-4">
+						<div class="col-sm-4 font-weight-bold text-dark">Card Type</div>
+						<div class="col-sm-8">
+							<select class="form-control" v-model="card.type">
+								<option value="news">News</option>
+								<option value="show">Show</option>
+								<option value="overlays">Image Overlays</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group row mb-4" v-show="card.type == 'show'">
+						<div class="col-sm-4 font-weight-bold text-primary">Show Data</div>
+						<div class="col-sm-8">
+							<div class="form-group">
+								<label>Episodes</label>
+								<input class="form-control" type="text" v-model="card.episodes" :change="supertrim(card.episodes)">
+							</div>
+							<div class="form-group">
+								<label>Duration</label>
+								<input class="form-control" type="text" v-model="card.duration" :change="supertrim(card.duration)">
+							</div>
+						</div>
+					</div>
+
+					<hr>
+					<div class="form-group row mb-4">
+						<div class="col-sm-4 font-weight-bold text-dark">Card Thumbnail URL</div>
+						<div class="col-sm-8">
+							<input class="form-control" type="url" v-model="card.thumbnail" :change="supertrim(card.thumbnail)">
+						</div>
+					</div>
+					<hr>
+
+					<div class="form-group row mb-4">
+						<div class="col-sm-4 font-weight-bold text-dark">Card Title</div>
+						<div class="col-sm-8">
+							<input class="form-control" type="text" v-model="card.headline" :change="supertrim(card.headline)">
+						</div>
+					</div>
+
+					<div class="form-group row mb-4">
+						<div class="col-sm-4 font-weight-bold text-dark">Card Subtitle</div>
+						<div class="col-sm-8">
+							<input class="form-control" type="text" v-model="card.subtitle" :change="supertrim(card.headline)">
+						</div>
+					</div>
+					<div class="form-group row mb-4">
+						<div class="col-sm-4 font-weight-bold text-dark">Card Body Text</div>
+						<div class="col-sm-8">
+							<textarea class="form-control" v-model="card.bodyText"></textarea>
+						</div>
+					</div>
+
+					<hr>
+					<div class="form-group row mb-4">
+						<div class="col-sm-4 font-weight-bold text-dark">Card Link</div>
+						<div class="col-sm-8">
+							<div class="form-group">
+								<label>Text</label>
+								<input class="form-control" type="text" v-model="card.CTAText">
+							</div>
+							<div class="form-group">
+								<label>Url</label>
+								<input class="form-control" type="text" v-model="card.CTAURL">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="col-md-4 col-sm-12 offset-2 pt-5">
 				<card-component :card="card"></card-component>
-
 			</div>
 
 		</div>
 	</div>
 
 	<!-- form -->
-	<div class="container mt-5">
-		<div class="row">
-			<div class="col-md-6">
-				<form class="">
-					<h1 class="pb-2 mt-0 mb-3 border-bottom">Card Content</h1>
-					<div class="form-group">
-						<label>Card Type</label>
-						<select class="form-control" v-model="card.type">
-							<option value="news">News</option>
-							<option value="show">Show</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Card Style</label>
-						<select class="form-control" v-model="card.style">
-							<option value="boxed">Boxed</option>
-							<option value="boxless">Boxless</option>
-						</select>
-					</div>
+	<div class="container mt-5 pt-5">
+		<div class="d-block">
+			<hr>
+			<h2 class="mb-5 font-weight-bold">Grid Example</h2>
+		</div>
+		<div class="row mb-5">
+			<div class="col-lg-6">
+				<card-component :card="card"></card-component>
+			</div>
+			<div class="col-lg-6">
+				<card-component :card="card"></card-component>
+			</div>
+		</div>
 
-					<div class="form-group" v-show="card.type == 'show'">
-						<label>Episodes</label>
-						<input class="form-control" type="text" v-model="card.episodes" :change="supertrim(card.episodes)"
-						       name="headline">
-					</div>
-					<div class="form-group" v-show="card.type == 'show'">
-						<label>Duration</label>
-						<input class="form-control" type="text" v-model="card.duration" :change="supertrim(card.duration)">
-					</div>
+		<div class="row mb-5">
+			<div class="col-lg-4">
+				<card-component :card="card"></card-component>
+			</div>
+			<div class="col-lg-4">
+				<card-component :card="card"></card-component>
+			</div>
+			<div class="col-lg-4">
+				<card-component :card="card"></card-component>
+			</div>
+		</div>
 
-					<div class="form-group">
-						<label>Headline</label>
-						<input class="form-control" type="text" v-model="card.headline" :change="supertrim(card.headline)">
-					</div>
-
-					<div class="form-group">
-						<label>Subtitle</label>
-						<input class="form-control" type="text" v-model="card.subtitle">
-					</div>
-
-					<div class="form-group">
-						<label>Card Text</label>
-						<textarea class="form-control" v-model="card.bodyText"></textarea>
-					</div>
-
-					<div class="form-group">
-						<label>Thumbnail</label>
-						<input class="form-control" type="text" v-model="card.thumbnail" :change="supertrim(card.thumbnail)">
-					</div>
-
-					<div class="form-group">
-						<label>CTA Text</label>
-						<input class="form-control" type="text" v-model="card.CTAText">
-					</div>
-					<div class="form-group">
-						<label>CTA URL</label>
-						<input class="form-control" type="text" v-model="card.CTAURL">
-					</div>
-				</form>
+		<div class="row mb-5">
+			<div class="col-lg-3">
+				<card-component :card="card"></card-component>
+			</div>
+			<div class="col-lg-3">
+				<card-component :card="card"></card-component>
+			</div>
+			<div class="col-lg-3">
+				<card-component :card="card"></card-component>
+			</div>
+			<div class="col-lg-3">
+				<card-component :card="card"></card-component>
 			</div>
 		</div>
 	</div>
